@@ -10,17 +10,19 @@ import (
 
 var openaiToken = os.Getenv("OPENAI_API_KEY")
 
-func ChatCompletion(message string) string {
+func ChatCompletion(message, modelFlag string) string {
 	if len(openaiToken) == 0 {
 		return "'OPENAI_API_KEY' not set in ENV"
 	}
-
+	model := openai.GPT3Dot5Turbo
+	if modelFlag == "gpt-4" || modelFlag == "gpt4" {
+		model = openai.GPT4o
+	}
 	client := openai.NewClient(openaiToken)
-
 	resp, err := client.CreateChatCompletion(
 		context.Background(),
 		openai.ChatCompletionRequest{
-			Model: openai.GPT3Dot5Turbo,
+			Model: model,
 			Messages: []openai.ChatCompletionMessage{
 				{
 					Role:    openai.ChatMessageRoleSystem,
