@@ -23,7 +23,7 @@
 1. **Install Jeeves**:
 
    ```sh
-   go install github.com/igweon/jeeves@latest
+   go install github.com/igweo/jeeves@latest
    ```
 
 2. **Set up your ENV with your api keys**:
@@ -40,14 +40,3 @@ jeeves ask "When should I use a mutex over a channel?"
 ```
 
 Jeeves will process your question and return an answer using the configured LLM API.
-
-### Command-Line Options (to be added)
-
-- `-api`: Specify which API to use (e.g., openai, google)
-- `-config`: Path to the configuration file (default is `./config.yaml`)
-
-Example:
-
-```sh
-jeeves -api openai "Explain the theory of relativity"
-```
