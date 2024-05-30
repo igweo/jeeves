@@ -38,5 +38,7 @@ To use Jeeves, simply run the executable with your question:
 ```sh
 jeeves ask "When should I use a mutex over a channel?"
 ```
-
-Jeeves will process your question and return an answer using the configured LLM API.
+Or to use GPT4 run the command with the '--model' flag
+```sh
+jeeves ask --model="gpt4" "How do I do X in Y framework?"
+```
